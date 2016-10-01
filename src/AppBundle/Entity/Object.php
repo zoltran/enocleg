@@ -5,10 +5,8 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Object
- *
- * @ORM\Table(name="object")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Resources\ObjectRepository")
+ * @ORM\Table(name="object") 
  */
 class Object
 {

@@ -7,12 +7,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class ViewObjectController extends Controller
 {
+
     /**
-     * @Route("/noclegi/{miasto}/dom", name="viewObject")
+     * @Route("/noclegi/Alwernia/dom", name="viewObject")
      */
-    public function viewObjectAction($miasto)
+    public function viewObjectAction()
     {
-        $miasto = 'Alwernia';
-        return $this->render('View/ViewObject.html.twig', array('miasto' => $miasto));
+
+        
+        return $this->render('View/ViewObject.html.twig');
     }
 }
