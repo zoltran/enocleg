@@ -1,0 +1,68 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Admins
+ *
+ * @ORM\Table(name="admins")
+ * @ORM\Entity
+ */
+class Admins
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="login", type="string", length=255, nullable=false)
+     */
+    private $login = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pass", type="string", length=32, nullable=false)
+     */
+    private $pass = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="function", type="string", length=255, nullable=false)
+     */
+    private $function = '';
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_login", type="datetime", nullable=false)
+     */
+    private $dateLogin = '0000-00-00 00:00:00';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     */
+    private $name = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="block", type="integer", nullable=false)
+     */
+    private $block = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}
+

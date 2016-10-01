@@ -1,0 +1,40 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Katgaleria
+ *
+ * @ORM\Table(name="katgaleria")
+ * @ORM\Entity
+ */
+class Katgaleria
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="katgPL", type="string", length=50, nullable=false)
+     */
+    private $katgpl;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="katgOpis", type="string", length=255, nullable=false)
+     */
+    private $katgopis;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="katgId", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $katgid;
+
+
+}
+

@@ -1,0 +1,47 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Photgaleria
+ *
+ * @ORM\Table(name="photgaleria")
+ * @ORM\Entity
+ */
+class Photgaleria
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="galKatId", type="integer", nullable=false)
+     */
+    private $galkatid = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="galUrl", type="string", length=255, nullable=false)
+     */
+    private $galurl = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="galName", type="string", length=100, nullable=false)
+     */
+    private $galname;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="galId", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $galid;
+
+
+}
+

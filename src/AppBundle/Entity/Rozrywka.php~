@@ -1,0 +1,236 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Rozrywka
+ *
+ * @ORM\Table(name="rozrywka")
+ * @ORM\Entity
+ */
+class Rozrywka
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rozOgl", type="integer", nullable=false)
+     */
+    private $rozogl;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rozSpa", type="integer", nullable=false)
+     */
+    private $rozspa = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rozKBasen", type="integer", nullable=false)
+     */
+    private $rozkbasen = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rozOBasen", type="integer", nullable=false)
+     */
+    private $rozobasen = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rozAquapark", type="integer", nullable=false)
+     */
+    private $rozaquapark = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rozSauna", type="integer", nullable=false)
+     */
+    private $rozsauna = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rozJacuzi", type="integer", nullable=false)
+     */
+    private $rozjacuzi = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rozSolarium", type="integer", nullable=false)
+     */
+    private $rozsolarium = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rozMasaz", type="integer", nullable=false)
+     */
+    private $rozmasaz = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rozOdnowa", type="integer", nullable=false)
+     */
+    private $rozodnowa = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rozKosmetyk", type="integer", nullable=false)
+     */
+    private $rozkosmetyk = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rozFitnes", type="integer", nullable=false)
+     */
+    private $rozfitnes = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rozSilownia", type="integer", nullable=false)
+     */
+    private $rozsilownia = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rozTziemny", type="integer", nullable=false)
+     */
+    private $roztziemny = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rozSquash", type="integer", nullable=false)
+     */
+    private $rozsquash = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rozTstolowy", type="integer", nullable=false)
+     */
+    private $roztstolowy = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rozSiatkowka", type="integer", nullable=false)
+     */
+    private $rozsiatkowka = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rozBoisko", type="integer", nullable=false)
+     */
+    private $rozboisko = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rozSala", type="integer", nullable=false)
+     */
+    private $rozsala = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rozParklinowy", type="integer", nullable=false)
+     */
+    private $rozparklinowy = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rozLodowisko", type="integer", nullable=false)
+     */
+    private $rozlodowisko = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rozStok", type="integer", nullable=false)
+     */
+    private $rozstok = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rozWypozyczalniaS", type="integer", nullable=false)
+     */
+    private $rozwypozyczalnias = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rozWypozyczalniaW", type="integer", nullable=false)
+     */
+    private $rozwypozyczalniaw = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rozWypozyczalniaR", type="integer", nullable=false)
+     */
+    private $rozwypozyczalniar = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rozBar", type="integer", nullable=false)
+     */
+    private $rozbar = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rozKlub", type="integer", nullable=false)
+     */
+    private $rozklub = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rozBilard", type="integer", nullable=false)
+     */
+    private $rozbilard = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rozKregielnia", type="integer", nullable=false)
+     */
+    private $rozkregielnia = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rozUser", type="integer", nullable=false)
+     */
+    private $rozuser;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rozId", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $rozid;
+
+
+}
+

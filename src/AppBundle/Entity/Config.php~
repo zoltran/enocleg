@@ -1,0 +1,40 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Config
+ *
+ * @ORM\Table(name="config")
+ * @ORM\Entity
+ */
+class Config
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cfgName", type="string", length=255, nullable=false)
+     */
+    private $cfgname = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cfgTxt", type="text", nullable=false)
+     */
+    private $cfgtxt;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="cfgId", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $cfgid;
+
+
+}
+

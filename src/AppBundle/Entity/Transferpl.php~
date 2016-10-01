@@ -1,0 +1,131 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Transferpl
+ *
+ * @ORM\Table(name="transferpl")
+ * @ORM\Entity
+ */
+class Transferpl
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_sprzedawcy", type="integer", nullable=false)
+     */
+    private $idSprzedawcy;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="kwota_zaplacona", type="string", length=20, nullable=false)
+     */
+    private $kwotaZaplacona;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_transakcji", type="integer", nullable=false)
+     */
+    private $idTransakcji;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="kwota_transakcji", type="string", length=20, nullable=false)
+     */
+    private $kwotaTransakcji;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status_transakcji", type="string", length=255, nullable=false)
+     */
+    private $statusTransakcji;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="blad", type="string", length=22, nullable=false)
+     */
+    private $blad;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ciag_pomocniczy", type="string", length=222, nullable=false)
+     */
+    private $ciagPomocniczy;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="suma_kontrolna", type="string", length=222, nullable=false)
+     */
+    private $sumaKontrolna;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="opis_transakcji", type="string", length=222, nullable=false)
+     */
+    private $opisTransakcji;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email_klienta", type="string", length=222, nullable=false)
+     */
+    private $emailKlienta;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="control", type="string", length=222, nullable=false)
+     */
+    private $control;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idogl", type="integer", nullable=false)
+     */
+    private $idogl;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="day", type="string", length=100, nullable=false)
+     */
+    private $day;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="option", type="string", length=100, nullable=false)
+     */
+    private $option;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="dateEnd", type="string", length=100, nullable=false)
+     */
+    private $dateend;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="testId", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $testid;
+
+
+}
+

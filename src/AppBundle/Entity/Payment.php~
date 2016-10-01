@@ -1,0 +1,82 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Payment
+ *
+ * @ORM\Table(name="payment")
+ * @ORM\Entity
+ */
+class Payment
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="payToo", type="integer", nullable=false)
+     */
+    private $paytoo = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="payOption", type="string", length=255, nullable=false)
+     */
+    private $payoption = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="payCodeSms", type="string", length=255, nullable=false)
+     */
+    private $paycodesms = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="payDay", type="integer", nullable=false)
+     */
+    private $payday = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="payPrice", type="integer", nullable=false)
+     */
+    private $payprice = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="payTxt", type="text", nullable=false)
+     */
+    private $paytxt;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="payDesc", type="string", length=255, nullable=false)
+     */
+    private $paydesc = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="paySeq", type="integer", nullable=false)
+     */
+    private $payseq = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="payId", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $payid;
+
+
+}
+

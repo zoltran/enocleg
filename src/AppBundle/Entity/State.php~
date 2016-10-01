@@ -1,0 +1,33 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * State
+ *
+ * @ORM\Table(name="state")
+ * @ORM\Entity
+ */
+class State
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="stateName", type="string", length=50, nullable=false)
+     */
+    private $statename;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="stateId", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $stateid;
+
+
+}
+

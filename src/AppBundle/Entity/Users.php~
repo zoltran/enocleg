@@ -1,0 +1,152 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Users
+ *
+ * @ORM\Table(name="users")
+ * @ORM\Entity
+ */
+class Users
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="userName", type="string", length=255, nullable=false)
+     */
+    private $username = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="userPass", type="string", length=255, nullable=false)
+     */
+    private $userpass = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="userEmail", type="string", length=255, nullable=false)
+     */
+    private $useremail = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="userFirma", type="string", length=255, nullable=false)
+     */
+    private $userfirma;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="userFrom", type="string", length=255, nullable=false)
+     */
+    private $userfrom = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="userUlica", type="string", length=150, nullable=false)
+     */
+    private $userulica;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="userPoczta", type="string", length=50, nullable=false)
+     */
+    private $userpoczta;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="userNip", type="string", length=50, nullable=false)
+     */
+    private $usernip;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="userRegon", type="string", length=50, nullable=false)
+     */
+    private $userregon;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="userTel", type="string", length=30, nullable=false)
+     */
+    private $usertel;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="userTel2", type="string", length=30, nullable=false)
+     */
+    private $usertel2;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="userEmail2", type="string", length=50, nullable=false)
+     */
+    private $useremail2;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="userImie", type="string", length=30, nullable=false)
+     */
+    private $userimie;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="userNazwisko", type="string", length=30, nullable=false)
+     */
+    private $usernazwisko;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="userPesel", type="string", length=15, nullable=false)
+     */
+    private $userpesel;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="userDate", type="datetime", nullable=false)
+     */
+    private $userdate = '0000-00-00 00:00:00';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="userHash", type="string", length=255, nullable=false)
+     */
+    private $userhash = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userConfirm", type="integer", nullable=false)
+     */
+    private $userconfirm = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="userId", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $userid;
+
+
+}
+

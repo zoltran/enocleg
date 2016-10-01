@@ -1,0 +1,54 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Baner
+ *
+ * @ORM\Table(name="baner")
+ * @ORM\Entity
+ */
+class Baner
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="banerKod", type="text", nullable=false)
+     */
+    private $banerkod;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="banerUrl", type="string", length=100, nullable=false)
+     */
+    private $banerurl;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="banerPozycja", type="integer", nullable=false)
+     */
+    private $banerpozycja;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="banerMiejsce", type="integer", nullable=false)
+     */
+    private $banermiejsce;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="banerId", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $banerid;
+
+
+}
+

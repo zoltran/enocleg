@@ -1,0 +1,180 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Udogodnienia
+ *
+ * @ORM\Table(name="udogodnienia")
+ * @ORM\Entity
+ */
+class Udogodnienia
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="udOgl", type="integer", nullable=false)
+     */
+    private $udogl;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="udInternet", type="integer", nullable=false)
+     */
+    private $udinternet = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="udKomputer", type="integer", nullable=false)
+     */
+    private $udkomputer = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="udTelewizor", type="integer", nullable=false)
+     */
+    private $udtelewizor = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="udParking", type="integer", nullable=false)
+     */
+    private $udparking = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="udLazienka", type="integer", nullable=false)
+     */
+    private $udlazienka = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="udRoom", type="integer", nullable=false)
+     */
+    private $udroom = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="udWyzywienie", type="integer", nullable=false)
+     */
+    private $udwyzywienie = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="udKuchnia", type="integer", nullable=false)
+     */
+    private $udkuchnia = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="udLodowka", type="integer", nullable=false)
+     */
+    private $udlodowka = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="udPralnia", type="integer", nullable=false)
+     */
+    private $udpralnia = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="udPrasowalnia", type="integer", nullable=false)
+     */
+    private $udprasowalnia = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="udGrill", type="integer", nullable=false)
+     */
+    private $udgrill = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="udOgnisko", type="integer", nullable=false)
+     */
+    private $udognisko = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="udNiepelnosprawni", type="integer", nullable=false)
+     */
+    private $udniepelnosprawni = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="udOgrod", type="integer", nullable=false)
+     */
+    private $udogrod = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="udPlac", type="integer", nullable=false)
+     */
+    private $udplac = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="udPiaskownica", type="integer", nullable=false)
+     */
+    private $udpiaskownica = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="udSPlaza", type="integer", nullable=false)
+     */
+    private $udsplaza = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="udKSala", type="integer", nullable=false)
+     */
+    private $udksala = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="udKlimatyzacja", type="integer", nullable=false)
+     */
+    private $udklimatyzacja = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="udUser", type="integer", nullable=false)
+     */
+    private $uduser;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="udId", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $udid;
+
+
+}
+

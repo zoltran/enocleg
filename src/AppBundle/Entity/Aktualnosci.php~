@@ -1,0 +1,54 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Aktualnosci
+ *
+ * @ORM\Table(name="aktualnosci")
+ * @ORM\Entity
+ */
+class Aktualnosci
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="aktTitle", type="string", length=500, nullable=false)
+     */
+    private $akttitle;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="aktTxt", type="text", nullable=false)
+     */
+    private $akttxt;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="aktJezyk", type="integer", nullable=false)
+     */
+    private $aktjezyk = '1';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="aktKat", type="integer", nullable=false)
+     */
+    private $aktkat = '1';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="aktId", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $aktid;
+
+
+}
+

@@ -1,0 +1,40 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Region
+ *
+ * @ORM\Table(name="region")
+ * @ORM\Entity
+ */
+class Region
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="regionName", type="string", length=55, nullable=false)
+     */
+    private $regionname;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="regionKat", type="integer", nullable=false)
+     */
+    private $regionkat;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="regionId", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $regionid;
+
+
+}
+

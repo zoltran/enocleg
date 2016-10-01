@@ -1,0 +1,124 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Allpay
+ *
+ * @ORM\Table(name="allpay")
+ * @ORM\Entity
+ */
+class Allpay
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     */
+    private $id = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="code14", type="string", length=15, nullable=false)
+     */
+    private $code14 = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="code30", type="string", length=15, nullable=false)
+     */
+    private $code30 = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type", type="string", length=5, nullable=false)
+     */
+    private $type = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prom30_via", type="string", length=6, nullable=false)
+     */
+    private $prom30Via = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prom60_via", type="string", length=6, nullable=false)
+     */
+    private $prom60Via = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prom_type", type="string", length=3, nullable=false)
+     */
+    private $promType = '';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="prom_cena30", type="float", precision=5, scale=2, nullable=false)
+     */
+    private $promCena30 = '0.00';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="prom_cena60", type="float", precision=5, scale=2, nullable=false)
+     */
+    private $promCena60 = '0.00';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="oglstan_type", type="string", length=10, nullable=false)
+     */
+    private $oglstanType = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="oglstan_sms", type="string", length=15, nullable=false)
+     */
+    private $oglstanSms = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="oglstanvia_type", type="string", length=15, nullable=false)
+     */
+    private $oglstanviaType = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="oglstanvia_kod", type="string", length=8, nullable=false)
+     */
+    private $oglstanviaKod = '';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="oglstanvia_cena", type="float", precision=5, scale=2, nullable=false)
+     */
+    private $oglstanviaCena = '0.00';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nazwa", type="string", length=100)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $nazwa;
+
+
+}
+

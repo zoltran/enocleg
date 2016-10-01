@@ -1,0 +1,33 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Aktkategoria
+ *
+ * @ORM\Table(name="aktKategoria")
+ * @ORM\Entity
+ */
+class Aktkategoria
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="aktkatName", type="string", length=255, nullable=false)
+     */
+    private $aktkatname;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="aktkatId", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $aktkatid;
+
+
+}
+

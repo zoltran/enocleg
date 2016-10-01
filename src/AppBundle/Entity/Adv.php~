@@ -1,0 +1,40 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Adv
+ *
+ * @ORM\Table(name="adv")
+ * @ORM\Entity
+ */
+class Adv
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="advName", type="string", length=255, nullable=false)
+     */
+    private $advname = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="advHtml", type="text", nullable=false)
+     */
+    private $advhtml;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="advId", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $advid;
+
+
+}
+

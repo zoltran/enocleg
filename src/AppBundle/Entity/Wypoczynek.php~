@@ -1,0 +1,397 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Wypoczynek
+ *
+ * @ORM\Table(name="wypoczynek")
+ * @ORM\Entity
+ */
+class Wypoczynek
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypOgl", type="integer", nullable=false)
+     */
+    private $wypogl;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypCanyoning", type="integer", nullable=false)
+     */
+    private $wypcanyoning = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypHydrospeed", type="integer", nullable=false)
+     */
+    private $wyphydrospeed = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypKajakarstwo", type="integer", nullable=false)
+     */
+    private $wypkajakarstwo = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypKitesurfing", type="integer", nullable=false)
+     */
+    private $wypkitesurfing = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypWNarty", type="integer", nullable=false)
+     */
+    private $wypwnarty = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypNurkowanie", type="integer", nullable=false)
+     */
+    private $wypnurkowanie = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypRafting", type="integer", nullable=false)
+     */
+    private $wyprafting = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypSkimboard", type="integer", nullable=false)
+     */
+    private $wypskimboard = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypWSkuter", type="integer", nullable=false)
+     */
+    private $wypwskuter = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypSkajakowy", type="integer", nullable=false)
+     */
+    private $wypskajakowy = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypSurfing", type="integer", nullable=false)
+     */
+    private $wypsurfing = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypWakeboard", type="integer", nullable=false)
+     */
+    private $wypwakeboard = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypWedkarstwo", type="integer", nullable=false)
+     */
+    private $wypwedkarstwo = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypWindsurfing", type="integer", nullable=false)
+     */
+    private $wypwindsurfing = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypZeglarstwo", type="integer", nullable=false)
+     */
+    private $wypzeglarstwo = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypBaloniarstwo", type="integer", nullable=false)
+     */
+    private $wypbaloniarstwo = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypJBase", type="integer", nullable=false)
+     */
+    private $wypjbase = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypJBungee", type="integer", nullable=false)
+     */
+    private $wypjbungee = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypSkating", type="integer", nullable=false)
+     */
+    private $wypskating = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypBuggykiting", type="integer", nullable=false)
+     */
+    private $wypbuggykiting = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypJDream", type="integer", nullable=false)
+     */
+    private $wypjdream = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypParalotniarstwo", type="integer", nullable=false)
+     */
+    private $wypparalotniarstwo = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypSpadochroniarstwo", type="integer", nullable=false)
+     */
+    private $wypspadochroniarstwo = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypSzybownictwo", type="integer", nullable=false)
+     */
+    private $wypszybownictwo = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypWystrzeliwanie", type="integer", nullable=false)
+     */
+    private $wypwystrzeliwanie = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypBoarding", type="integer", nullable=false)
+     */
+    private $wypboarding = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypJaskinie", type="integer", nullable=false)
+     */
+    private $wypjaskinie = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypWSiodle", type="integer", nullable=false)
+     */
+    private $wypwsiodle = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypMotocross", type="integer", nullable=false)
+     */
+    private $wypmotocross = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypMDirtboarding", type="integer", nullable=false)
+     */
+    private $wypmdirtboarding = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypNarciarstwo", type="integer", nullable=false)
+     */
+    private $wypnarciarstwo = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypNbiegowe", type="integer", nullable=false)
+     */
+    private $wypnbiegowe = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypSnowboard", type="integer", nullable=false)
+     */
+    private $wypsnowboard = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypSnowscoot", type="integer", nullable=false)
+     */
+    private $wypsnowscoot = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypZaprzegi", type="integer", nullable=false)
+     */
+    private $wypzaprzegi = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypSkutery", type="integer", nullable=false)
+     */
+    private $wypskutery = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypTrekking", type="integer", nullable=false)
+     */
+    private $wyptrekking = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypNordic", type="integer", nullable=false)
+     */
+    private $wypnordic = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypWedrowki", type="integer", nullable=false)
+     */
+    private $wypwedrowki = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypRowery", type="integer", nullable=false)
+     */
+    private $wyprowery = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypOffroad", type="integer", nullable=false)
+     */
+    private $wypoffroad = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypMyslistwo", type="integer", nullable=false)
+     */
+    private $wypmyslistwo = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypPaintball", type="integer", nullable=false)
+     */
+    private $wyppaintball = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypParkour", type="integer", nullable=false)
+     */
+    private $wypparkour = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypPoduszkowce", type="integer", nullable=false)
+     */
+    private $wyppoduszkowce = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypPowerizer", type="integer", nullable=false)
+     */
+    private $wyppowerizer = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypTrikke", type="integer", nullable=false)
+     */
+    private $wyptrikke = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypRajdy", type="integer", nullable=false)
+     */
+    private $wyprajdy = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypSkateboard", type="integer", nullable=false)
+     */
+    private $wypskateboard = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypQuady", type="integer", nullable=false)
+     */
+    private $wypquady = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypWspinaczka", type="integer", nullable=false)
+     */
+    private $wypwspinaczka = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wyUser", type="integer", nullable=false)
+     */
+    private $wyuser;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="wypId", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $wypid;
+
+
+}
+

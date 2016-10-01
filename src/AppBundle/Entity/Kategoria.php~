@@ -1,0 +1,47 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Kategoria
+ *
+ * @ORM\Table(name="kategoria")
+ * @ORM\Entity
+ */
+class Kategoria
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="katPL", type="string", length=50, nullable=false)
+     */
+    private $katpl;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="katEN", type="string", length=50, nullable=false)
+     */
+    private $katen;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="katGR", type="string", length=50, nullable=false)
+     */
+    private $katgr;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="katId", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $katid;
+
+
+}
+

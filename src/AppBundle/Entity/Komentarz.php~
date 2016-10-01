@@ -1,0 +1,40 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Komentarz
+ *
+ * @ORM\Table(name="komentarz")
+ * @ORM\Entity
+ */
+class Komentarz
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idOgloszenia", type="integer", nullable=false)
+     */
+    private $idogloszenia = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="trescKomentarz", type="string", length=355, nullable=false)
+     */
+    private $tresckomentarz = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idKomentarz", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idkomentarz;
+
+
+}
+

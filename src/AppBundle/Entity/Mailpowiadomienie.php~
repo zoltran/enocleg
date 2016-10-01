@@ -1,0 +1,47 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Mailpowiadomienie
+ *
+ * @ORM\Table(name="mailpowiadomienie")
+ * @ORM\Entity
+ */
+class Mailpowiadomienie
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mailOd", type="string", length=255, nullable=false)
+     */
+    private $mailod = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mailDo", type="string", length=255, nullable=false)
+     */
+    private $maildo = '';
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="mailData", type="datetime", nullable=false)
+     */
+    private $maildata = '0000-00-00 00:00:00';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="mailId", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $mailid;
+
+
+}
+

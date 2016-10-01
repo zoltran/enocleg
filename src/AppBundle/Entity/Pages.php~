@@ -1,0 +1,54 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Pages
+ *
+ * @ORM\Table(name="pages")
+ * @ORM\Entity
+ */
+class Pages
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pagesTitle", type="string", length=255, nullable=false)
+     */
+    private $pagestitle = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pagesTxt", type="text", nullable=false)
+     */
+    private $pagestxt;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="pagesJezyk", type="integer", nullable=false)
+     */
+    private $pagesjezyk = '1';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="pagId", type="integer", nullable=false)
+     */
+    private $pagid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="pagesId", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $pagesid;
+
+
+}
+

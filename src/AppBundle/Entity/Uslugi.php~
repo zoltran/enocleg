@@ -1,0 +1,47 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Uslugi
+ *
+ * @ORM\Table(name="uslugi")
+ * @ORM\Entity
+ */
+class Uslugi
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="usPL", type="string", length=55, nullable=false)
+     */
+    private $uspl;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="usEN", type="string", length=55, nullable=false)
+     */
+    private $usen;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="usGR", type="string", length=55, nullable=false)
+     */
+    private $usgr;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="usId", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $usid;
+
+
+}
+
