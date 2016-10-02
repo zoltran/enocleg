@@ -52,7 +52,9 @@ class ListObjectController extends Controller
     {
 
         $em = $this->getDoctrine()->getManager();
-        $objekt= $em->getRepository('AppBundle:Object')->findAll();
+        $objekt= $em->getRepository('AppBundle:Object')->findOneBy();
+
+
 
         return $this->render('List/listTest.html.twig', array(
             'objects' => $objekt

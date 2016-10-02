@@ -440,6 +440,8 @@ class Object
     /**
      * @var integer
      *
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Photos")
+     * @ORM\JoinColumn(name="obId", referencedColumnName="photoObjectId")
      * @ORM\Column(name="obId", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")

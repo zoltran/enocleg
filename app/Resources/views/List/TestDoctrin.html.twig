@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+
+    {% for objected in object %}
+        {{ objected.obid }}
+        {{ objected.obname }} <br>
+
+
+        {% endfor %}
+
+{% endblock %}
