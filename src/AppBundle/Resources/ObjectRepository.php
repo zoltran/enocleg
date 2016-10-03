@@ -12,5 +12,15 @@ use Doctrine\ORM\EntityRepository;
  */
 class ObjectRepository extends EntityRepository
 {
-    
+    public function getTestowyObiekt($name)
+    {
+        die('a');
+        $q= $this->createQueryBuilder('obj')
+            ->addOrderBy('obj.obname', 'DESC');
+            $query= $q->getQuery();
+            var_dump($query->getDQL());die;
+            return $query->execute();
+
+            
+    }
 }

@@ -5,8 +5,10 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="AppBundle\Resources\ObjectRepository")
- * @ORM\Table(name="object") 
+ * Object
+ * 
+ * @ORM\Table(name="object")
+ * @ORM\Entity(repositoryClass="AppBundle\Resources\ObjectRepository") 
  */
 class Object
 {
@@ -440,8 +442,6 @@ class Object
     /**
      * @var integer
      *
-     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Photos")
-     * @ORM\JoinColumn(name="obId", referencedColumnName="photoObjectId")
      * @ORM\Column(name="obId", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")

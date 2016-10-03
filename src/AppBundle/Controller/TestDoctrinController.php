@@ -2,7 +2,6 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\Object;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -13,30 +12,22 @@ class TestDoctrinController extends Controller
      */
     public function doctrinAction()
     {
-        $object = new Object();
-
+        $name = 'ala';
         $objectRepository = $this->getDoctrine()->getManager()->getRepository('AppBundle:Object');
+        $object= $objectRepository->createQueryBuilder('obj')
+            ->select('obj.obfilm')
+            ->addOrderBy('obj.obname', 'DESC');
+        $query= $object->getQuery();
 
-        $object = $objectRepository->findAll();
-        return $this->render('List/TestDoctrin.html.twig', array(
-            'object' => $object
-        ));
+
+
+
+        return $this->render('List/TestDoctrin.html.twig', [
+            'object' => $name
+            
+        ]);
     }
 
-    public function getObject() {
 
-        $query = $this->
-//        $qb = $this->entityManager->createQueryBuilder();
-//        $qb
-//            ->select('a', 'u')
-//            ->from('Credit\Entity\UserCreditHistory', 'a')
-//            ->leftJoin('a.user', 'u')
-//            ->where('u = :user')
-//            ->setParameter('user', $users)
-//            ->orderBy('a.created_at', 'DESC');
-//
-//        return $qb->getQuery()->getResult();
-    }
 
-//   
 }

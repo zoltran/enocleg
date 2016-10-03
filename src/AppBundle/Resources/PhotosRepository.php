@@ -12,4 +12,8 @@ use Doctrine\ORM\EntityRepository;
  */
 class PhotosRepository extends EntityRepository
 {
+    public function aTestTestowy()
+    {
+        die('testowy');
+    }
 }
