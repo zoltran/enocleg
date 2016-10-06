@@ -14,3 +14,16 @@
 !var/SymfonyRequirements.php
 /vendor/
 /web/bundles/
+.idea
+.gitignore
+.*
+*.*~
+*.dist
+.idea/
+/.idea/
+*/.idea/workspace.xml
+*/.idea/tasks.xml
+**/.idea/workspace.xml
+**/.idea/tasks.xml
+/.idea/
+.idea/workspace.xml
