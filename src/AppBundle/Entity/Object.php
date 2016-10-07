@@ -3,12 +3,13 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use AppBundle\Resources\ObjectRepository;
 
 /**
- * Object
- * 
+ * Class Object
+ * @package AppBundle\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Resources\ObjectRepository")
  * @ORM\Table(name="object")
- * @ORM\Entity(repositoryClass="AppBundle\Resources\ObjectRepository") 
  */
 class Object
 {
