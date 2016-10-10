@@ -12,19 +12,20 @@ use Doctrine\ORM\EntityRepository;
  */
 class ObjectRepository extends EntityRepository
 {
-    public function findAllordered()
+    public function findPageForUser($miasto)
     {
+//        var_dump($object); die;
 
-        $q= $this->getEntityManager()->createQuery(
-            "SELECT obj.obname FROM AppBundle\Entity\Object obj WHERE obj.city =250"
+        $qb = $this->getEntityManager()->createQueryBuilder();
 
+        $qb->add('select', 'cit')
+            ->from('AppBundle\Entity\Object', 'obj')
+            ->join('AppBundle\Entity\Miasto', 'cit', 'WITH', 'obj.obCity = cit.miastoId')
+            ->where('obj.obId = :object')
+            ->setParameter('object', $miasto);
+//        var_dump($qb->getDQL()); die;
 
-        );
-        $object = $q->getResult();
-
-
-
-
-
+         $query = $qb->getQuery();
+        return $query ->execute();
     }
 }

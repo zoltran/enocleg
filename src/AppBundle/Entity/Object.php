@@ -44,6 +44,8 @@ class Object
     /**
      * @var integer
      *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Miasto", inversedBy="objectCity")
+     * @ORM\JoinColumn(name="obCity", referencedColumnName="miastoId")
      * @ORM\Column(name="obCity", type="integer", nullable=false)
      */
     private $obcity = '0';

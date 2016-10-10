@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Miasto
  *
  * @ORM\Table(name="miasto")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="MiastoRepository")
  */
 class Miasto
 {
@@ -34,6 +34,13 @@ class Miasto
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $miastoid;
+
+    /**
+     * @var Object
+     *
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Object", mappedBy="Miasto" )
+     */
+    private $objectCity = [];
 
 
 
@@ -94,4 +101,20 @@ class Miasto
     {
         return $this->miastoid;
     }
+
+//    /**
+//     * @return array
+//     */
+//    public function getObjectCity()
+//    {
+//        return $this->objectCity;
+//    }
+//
+//    /**
+//     * @param array $objectCity
+//     */
+//    public function setObjectCity($objectCity)
+//    {
+//        $this->objectCity = $objectCity;
+//    }
 }
