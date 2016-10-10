@@ -14,12 +14,16 @@ class ObjectRepository extends EntityRepository
 {
     public function findAllordered()
     {
-        die('a');
-//        $q= $this->createQueryBuilder('obj')
-//            ->addOrderBy('obj.obname', 'DESC');
-//            $query= $q->getQuery();
-//            var_dump($query->getDQL());die;
-//            return $query->execute();
+
+        $q= $this->getEntityManager()->createQuery(
+            "SELECT obj.obname FROM AppBundle\Entity\Object obj WHERE obj.city =250"
+
+
+        );
+        $object = $q->getResult();
+
+
+
 
 
     }
