@@ -17,7 +17,7 @@ class Miasto
      *
      * @ORM\Column(name="miastoName", type="string", length=55, nullable=false)
      */
-    private $miastoname;
+    public $miastoname;
 
     /**
      * @var integer
@@ -35,12 +35,12 @@ class Miasto
      */
     private $miastoid;
 
-    /**
-     * @var Object
-     *
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Object", mappedBy="Miasto" )
-     */
-    private $objectCity = [];
+//    /**
+//     * @var Object
+//     *
+//     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Object", mappedBy="Miasto" )
+//     */
+//    private $objectCity;
 
 
 

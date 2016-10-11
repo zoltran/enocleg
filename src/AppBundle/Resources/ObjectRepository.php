@@ -23,7 +23,7 @@ class ObjectRepository extends EntityRepository
             ->join('AppBundle\Entity\Miasto', 'cit', 'WITH', 'obj.obCity = cit.miastoId')
             ->where('obj.obId = :object')
             ->setParameter('object', $miasto);
-//        var_dump($qb->getDQL()); die;
+        var_dump($qb->getDQL()); die;
 
          $query = $qb->getQuery();
         return $query ->execute();
