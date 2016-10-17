@@ -36,5 +36,62 @@ class Foto
     private $fotoid;
 
 
-}
 
+    /**
+     * Set fotoobjectid
+     *
+     * @param integer $fotoobjectid
+     *
+     * @return Foto
+     */
+    public function setFotoobjectid($fotoobjectid)
+    {
+        $this->fotoobjectid = $fotoobjectid;
+
+        return $this;
+    }
+
+    /**
+     * Get fotoobjectid
+     *
+     * @return integer
+     */
+    public function getFotoobjectid()
+    {
+        return $this->fotoobjectid;
+    }
+
+    /**
+     * Set fotourl
+     *
+     * @param string $fotourl
+     *
+     * @return Foto
+     */
+    public function setFotourl($fotourl)
+    {
+        $this->fotourl = $fotourl;
+
+        return $this;
+    }
+
+    /**
+     * Get fotourl
+     *
+     * @return string
+     */
+    public function getFotourl()
+    {
+        return $this->fotourl;
+    }
+
+    /**
+     * Get fotoid
+     *
+     * @return integer
+     */
+    public function getFotoid()
+    {
+        return $this->fotoid;
+    }
+}

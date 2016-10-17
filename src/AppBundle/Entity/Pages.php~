@@ -50,5 +50,110 @@ class Pages
     private $pagesid;
 
 
-}
 
+    /**
+     * Set pagestitle
+     *
+     * @param string $pagestitle
+     *
+     * @return Pages
+     */
+    public function setPagestitle($pagestitle)
+    {
+        $this->pagestitle = $pagestitle;
+
+        return $this;
+    }
+
+    /**
+     * Get pagestitle
+     *
+     * @return string
+     */
+    public function getPagestitle()
+    {
+        return $this->pagestitle;
+    }
+
+    /**
+     * Set pagestxt
+     *
+     * @param string $pagestxt
+     *
+     * @return Pages
+     */
+    public function setPagestxt($pagestxt)
+    {
+        $this->pagestxt = $pagestxt;
+
+        return $this;
+    }
+
+    /**
+     * Get pagestxt
+     *
+     * @return string
+     */
+    public function getPagestxt()
+    {
+        return $this->pagestxt;
+    }
+
+    /**
+     * Set pagesjezyk
+     *
+     * @param integer $pagesjezyk
+     *
+     * @return Pages
+     */
+    public function setPagesjezyk($pagesjezyk)
+    {
+        $this->pagesjezyk = $pagesjezyk;
+
+        return $this;
+    }
+
+    /**
+     * Get pagesjezyk
+     *
+     * @return integer
+     */
+    public function getPagesjezyk()
+    {
+        return $this->pagesjezyk;
+    }
+
+    /**
+     * Set pagid
+     *
+     * @param integer $pagid
+     *
+     * @return Pages
+     */
+    public function setPagid($pagid)
+    {
+        $this->pagid = $pagid;
+
+        return $this;
+    }
+
+    /**
+     * Get pagid
+     *
+     * @return integer
+     */
+    public function getPagid()
+    {
+        return $this->pagid;
+    }
+
+    /**
+     * Get pagesid
+     *
+     * @return integer
+     */
+    public function getPagesid()
+    {
+        return $this->pagesid;
+    }
+}

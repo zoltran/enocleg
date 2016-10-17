@@ -36,5 +36,62 @@ class Config
     private $cfgid;
 
 
-}
 
+    /**
+     * Set cfgname
+     *
+     * @param string $cfgname
+     *
+     * @return Config
+     */
+    public function setCfgname($cfgname)
+    {
+        $this->cfgname = $cfgname;
+
+        return $this;
+    }
+
+    /**
+     * Get cfgname
+     *
+     * @return string
+     */
+    public function getCfgname()
+    {
+        return $this->cfgname;
+    }
+
+    /**
+     * Set cfgtxt
+     *
+     * @param string $cfgtxt
+     *
+     * @return Config
+     */
+    public function setCfgtxt($cfgtxt)
+    {
+        $this->cfgtxt = $cfgtxt;
+
+        return $this;
+    }
+
+    /**
+     * Get cfgtxt
+     *
+     * @return string
+     */
+    public function getCfgtxt()
+    {
+        return $this->cfgtxt;
+    }
+
+    /**
+     * Get cfgid
+     *
+     * @return integer
+     */
+    public function getCfgid()
+    {
+        return $this->cfgid;
+    }
+}

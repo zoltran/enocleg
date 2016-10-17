@@ -43,5 +43,86 @@ class Photgaleria
     private $galid;
 
 
-}
 
+    /**
+     * Set galkatid
+     *
+     * @param integer $galkatid
+     *
+     * @return Photgaleria
+     */
+    public function setGalkatid($galkatid)
+    {
+        $this->galkatid = $galkatid;
+
+        return $this;
+    }
+
+    /**
+     * Get galkatid
+     *
+     * @return integer
+     */
+    public function getGalkatid()
+    {
+        return $this->galkatid;
+    }
+
+    /**
+     * Set galurl
+     *
+     * @param string $galurl
+     *
+     * @return Photgaleria
+     */
+    public function setGalurl($galurl)
+    {
+        $this->galurl = $galurl;
+
+        return $this;
+    }
+
+    /**
+     * Get galurl
+     *
+     * @return string
+     */
+    public function getGalurl()
+    {
+        return $this->galurl;
+    }
+
+    /**
+     * Set galname
+     *
+     * @param string $galname
+     *
+     * @return Photgaleria
+     */
+    public function setGalname($galname)
+    {
+        $this->galname = $galname;
+
+        return $this;
+    }
+
+    /**
+     * Get galname
+     *
+     * @return string
+     */
+    public function getGalname()
+    {
+        return $this->galname;
+    }
+
+    /**
+     * Get galid
+     *
+     * @return integer
+     */
+    public function getGalid()
+    {
+        return $this->galid;
+    }
+}

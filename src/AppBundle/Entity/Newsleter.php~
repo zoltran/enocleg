@@ -36,5 +36,62 @@ class Newsleter
     private $newid;
 
 
-}
 
+    /**
+     * Set new
+     *
+     * @param string $new
+     *
+     * @return Newsleter
+     */
+    public function setNew($new)
+    {
+        $this->new = $new;
+
+        return $this;
+    }
+
+    /**
+     * Get new
+     *
+     * @return string
+     */
+    public function getNew()
+    {
+        return $this->new;
+    }
+
+    /**
+     * Set newdata
+     *
+     * @param \DateTime $newdata
+     *
+     * @return Newsleter
+     */
+    public function setNewdata($newdata)
+    {
+        $this->newdata = $newdata;
+
+        return $this;
+    }
+
+    /**
+     * Get newdata
+     *
+     * @return \DateTime
+     */
+    public function getNewdata()
+    {
+        return $this->newdata;
+    }
+
+    /**
+     * Get newid
+     *
+     * @return integer
+     */
+    public function getNewid()
+    {
+        return $this->newid;
+    }
+}

@@ -43,5 +43,86 @@ class Mailpowiadomienie
     private $mailid;
 
 
-}
 
+    /**
+     * Set mailod
+     *
+     * @param string $mailod
+     *
+     * @return Mailpowiadomienie
+     */
+    public function setMailod($mailod)
+    {
+        $this->mailod = $mailod;
+
+        return $this;
+    }
+
+    /**
+     * Get mailod
+     *
+     * @return string
+     */
+    public function getMailod()
+    {
+        return $this->mailod;
+    }
+
+    /**
+     * Set maildo
+     *
+     * @param string $maildo
+     *
+     * @return Mailpowiadomienie
+     */
+    public function setMaildo($maildo)
+    {
+        $this->maildo = $maildo;
+
+        return $this;
+    }
+
+    /**
+     * Get maildo
+     *
+     * @return string
+     */
+    public function getMaildo()
+    {
+        return $this->maildo;
+    }
+
+    /**
+     * Set maildata
+     *
+     * @param \DateTime $maildata
+     *
+     * @return Mailpowiadomienie
+     */
+    public function setMaildata($maildata)
+    {
+        $this->maildata = $maildata;
+
+        return $this;
+    }
+
+    /**
+     * Get maildata
+     *
+     * @return \DateTime
+     */
+    public function getMaildata()
+    {
+        return $this->maildata;
+    }
+
+    /**
+     * Get mailid
+     *
+     * @return integer
+     */
+    public function getMailid()
+    {
+        return $this->mailid;
+    }
+}

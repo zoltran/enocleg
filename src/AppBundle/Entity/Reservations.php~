@@ -85,5 +85,230 @@ class Reservations
     private $id;
 
 
-}
 
+    /**
+     * Set objectId
+     *
+     * @param integer $objectId
+     *
+     * @return Reservations
+     */
+    public function setObjectId($objectId)
+    {
+        $this->objectId = $objectId;
+
+        return $this;
+    }
+
+    /**
+     * Get objectId
+     *
+     * @return integer
+     */
+    public function getObjectId()
+    {
+        return $this->objectId;
+    }
+
+    /**
+     * Set reservationFrom
+     *
+     * @param \DateTime $reservationFrom
+     *
+     * @return Reservations
+     */
+    public function setReservationFrom($reservationFrom)
+    {
+        $this->reservationFrom = $reservationFrom;
+
+        return $this;
+    }
+
+    /**
+     * Get reservationFrom
+     *
+     * @return \DateTime
+     */
+    public function getReservationFrom()
+    {
+        return $this->reservationFrom;
+    }
+
+    /**
+     * Set reservationTo
+     *
+     * @param \DateTime $reservationTo
+     *
+     * @return Reservations
+     */
+    public function setReservationTo($reservationTo)
+    {
+        $this->reservationTo = $reservationTo;
+
+        return $this;
+    }
+
+    /**
+     * Get reservationTo
+     *
+     * @return \DateTime
+     */
+    public function getReservationTo()
+    {
+        return $this->reservationTo;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Reservations
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set phone
+     *
+     * @param string $phone
+     *
+     * @return Reservations
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Get phone
+     *
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * Set price
+     *
+     * @param string $price
+     *
+     * @return Reservations
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
+    /**
+     * Get price
+     *
+     * @return string
+     */
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    /**
+     * Set pricePaid
+     *
+     * @param string $pricePaid
+     *
+     * @return Reservations
+     */
+    public function setPricePaid($pricePaid)
+    {
+        $this->pricePaid = $pricePaid;
+
+        return $this;
+    }
+
+    /**
+     * Get pricePaid
+     *
+     * @return string
+     */
+    public function getPricePaid()
+    {
+        return $this->pricePaid;
+    }
+
+    /**
+     * Set count
+     *
+     * @param integer $count
+     *
+     * @return Reservations
+     */
+    public function setCount($count)
+    {
+        $this->count = $count;
+
+        return $this;
+    }
+
+    /**
+     * Get count
+     *
+     * @return integer
+     */
+    public function getCount()
+    {
+        return $this->count;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Reservations
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+}

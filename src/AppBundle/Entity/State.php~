@@ -29,5 +29,38 @@ class State
     private $stateid;
 
 
-}
 
+    /**
+     * Set statename
+     *
+     * @param string $statename
+     *
+     * @return State
+     */
+    public function setStatename($statename)
+    {
+        $this->statename = $statename;
+
+        return $this;
+    }
+
+    /**
+     * Get statename
+     *
+     * @return string
+     */
+    public function getStatename()
+    {
+        return $this->statename;
+    }
+
+    /**
+     * Get stateid
+     *
+     * @return integer
+     */
+    public function getStateid()
+    {
+        return $this->stateid;
+    }
+}

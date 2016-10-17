@@ -29,5 +29,38 @@ class Sort
     private $sortid;
 
 
-}
 
+    /**
+     * Set sortname
+     *
+     * @param string $sortname
+     *
+     * @return Sort
+     */
+    public function setSortname($sortname)
+    {
+        $this->sortname = $sortname;
+
+        return $this;
+    }
+
+    /**
+     * Get sortname
+     *
+     * @return string
+     */
+    public function getSortname()
+    {
+        return $this->sortname;
+    }
+
+    /**
+     * Get sortid
+     *
+     * @return integer
+     */
+    public function getSortid()
+    {
+        return $this->sortid;
+    }
+}

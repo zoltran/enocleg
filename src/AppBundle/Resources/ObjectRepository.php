@@ -12,20 +12,26 @@ use Doctrine\ORM\EntityRepository;
  */
 class ObjectRepository extends EntityRepository
 {
-    public function findPageForUser($miasto)
+    /**
+     * @return array
+     */
+    public function findPageForUser()
     {
-//        var_dump($object); die;
+//            $dql = "SELECT cit.miastoName FROM AppBundle\Entity\Object obj, AppBundle\Entity\Miasto cit WHERE obj.obId = '1792'";
 
-        $qb = $this->getEntityManager()->createQueryBuilder();
-
-        $qb->add('select', 'cit')
-            ->from('AppBundle\Entity\Object', 'obj')
-            ->join('AppBundle\Entity\Miasto', 'cit', 'WITH', 'obj.obCity = cit.miastoId')
-            ->where('obj.obId = :object')
-            ->setParameter('object', $miasto);
-        var_dump($qb->getDQL()); die;
-
-         $query = $qb->getQuery();
-        return $query ->execute();
+//        $query = $this->getEntityManager()->createQuery($dql);
+//        return $query->execute();
+//        $qb = $this->createQueryBuilder('obj')
+//            ->where('obj.obname = :obname')
+////            ->where('obj.obid = :obid')
+//            ->setParameter('obname', 'Willa Rawa')
+////            ->setParameter('obid', $obid)
+//            ->getQuery();
+//
+//
+////        var_dump($qb->getDQL());die;
+//        $query = $qb->getResult();
+//
+//        return $query;
     }
 }

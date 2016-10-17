@@ -29,5 +29,38 @@ class Banmiejsce
     private $miejsceid;
 
 
-}
 
+    /**
+     * Set miejscename
+     *
+     * @param string $miejscename
+     *
+     * @return Banmiejsce
+     */
+    public function setMiejscename($miejscename)
+    {
+        $this->miejscename = $miejscename;
+
+        return $this;
+    }
+
+    /**
+     * Get miejscename
+     *
+     * @return string
+     */
+    public function getMiejscename()
+    {
+        return $this->miejscename;
+    }
+
+    /**
+     * Get miejsceid
+     *
+     * @return integer
+     */
+    public function getMiejsceid()
+    {
+        return $this->miejsceid;
+    }
+}

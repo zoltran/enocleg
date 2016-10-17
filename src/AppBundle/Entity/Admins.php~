@@ -64,5 +64,158 @@ class Admins
     private $id;
 
 
-}
 
+    /**
+     * Set login
+     *
+     * @param string $login
+     *
+     * @return Admins
+     */
+    public function setLogin($login)
+    {
+        $this->login = $login;
+
+        return $this;
+    }
+
+    /**
+     * Get login
+     *
+     * @return string
+     */
+    public function getLogin()
+    {
+        return $this->login;
+    }
+
+    /**
+     * Set pass
+     *
+     * @param string $pass
+     *
+     * @return Admins
+     */
+    public function setPass($pass)
+    {
+        $this->pass = $pass;
+
+        return $this;
+    }
+
+    /**
+     * Get pass
+     *
+     * @return string
+     */
+    public function getPass()
+    {
+        return $this->pass;
+    }
+
+    /**
+     * Set function
+     *
+     * @param string $function
+     *
+     * @return Admins
+     */
+    public function setFunction($function)
+    {
+        $this->function = $function;
+
+        return $this;
+    }
+
+    /**
+     * Get function
+     *
+     * @return string
+     */
+    public function getFunction()
+    {
+        return $this->function;
+    }
+
+    /**
+     * Set dateLogin
+     *
+     * @param \DateTime $dateLogin
+     *
+     * @return Admins
+     */
+    public function setDateLogin($dateLogin)
+    {
+        $this->dateLogin = $dateLogin;
+
+        return $this;
+    }
+
+    /**
+     * Get dateLogin
+     *
+     * @return \DateTime
+     */
+    public function getDateLogin()
+    {
+        return $this->dateLogin;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Admins
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set block
+     *
+     * @param integer $block
+     *
+     * @return Admins
+     */
+    public function setBlock($block)
+    {
+        $this->block = $block;
+
+        return $this;
+    }
+
+    /**
+     * Get block
+     *
+     * @return integer
+     */
+    public function getBlock()
+    {
+        return $this->block;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+}

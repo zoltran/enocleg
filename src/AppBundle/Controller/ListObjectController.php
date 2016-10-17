@@ -2,49 +2,60 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\Miasto;
-use AppBundle\SQL\cityName;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
+/**
+ * Class ListObjectController
+ * @package AppBundle\Controller
+ */
 class ListObjectController extends Controller
 {
 
+    /**
+     * @Route("/lista/test", name="testList")
+     */
+    public function getObject()
+    {
+        $idObject = 1815;
+
+        $object = $this->getDoctrine()->getManager()
+            ->getRepository('AppBundle:Object')->find($idObject);
+
+        $nameObject = $this->getObname($object);
+        $city = $this->getCityName($object);
+        $photo = $this->getMidiFoto($object);
+
+        return $this->render('List/listTest.html.twig', array(
+            'city' =>$city,
+            'photo' =>$photo,
+            'nameObject' => $nameObject
+    ));
+    }
 
     /**
-     * @Route("/lista/testowa/{miasto}", name="testListObject")
+     * @param $object
+     * @return mixed
      */
-    public function TestListAction()
+    private function getCityName($object)
     {
-        $miasto = $this->getDoctrine()->getManager()->getRepository(Miasto::class);
-            $nameMiasto = $miasto->find('Poznań');
-        var_dump($nameMiasto); die;
-        $mojeMiasto = $this->getCityName($miasto);
 
-        //        $em = $this->getDoctrine()->getManager()->getRepository('AppBundle:Object');
+        $city = $object->getCityName()->getMiastoname();
 
-//        $object = Object::class;
-//        $object= $this->findAllCity();
-
-        return $this->render('List/listTest.html.twig', [
-            'object' => $mojeMiasto
-        ]);
+        return $city;
     }
 
-    public function getCityName($miasto)
+    /**
+     * @param $object
+     * @return mixed
+     */
+    private function getMidiFoto($object)
     {
-        $conn = $this->get('database_connection');
-        $miasto1 = $conn->fetchAll
-        ("
-            SELECT cit.miastoName, obj.obName 
-            FROM object obj 
-            Left JOIN miasto cit 
-            ON obj.obCity = cit.miastoId
-            WHERE cit.miastoName = '$miasto' 
-        ");
+        $photo = $object->getPhotosGet()->getPhotourl();
 
-        return $miasto1;
+        return $photo;
     }
+
 
 
 }

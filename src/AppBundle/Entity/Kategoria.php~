@@ -43,5 +43,86 @@ class Kategoria
     private $katid;
 
 
-}
 
+    /**
+     * Set katpl
+     *
+     * @param string $katpl
+     *
+     * @return Kategoria
+     */
+    public function setKatpl($katpl)
+    {
+        $this->katpl = $katpl;
+
+        return $this;
+    }
+
+    /**
+     * Get katpl
+     *
+     * @return string
+     */
+    public function getKatpl()
+    {
+        return $this->katpl;
+    }
+
+    /**
+     * Set katen
+     *
+     * @param string $katen
+     *
+     * @return Kategoria
+     */
+    public function setKaten($katen)
+    {
+        $this->katen = $katen;
+
+        return $this;
+    }
+
+    /**
+     * Get katen
+     *
+     * @return string
+     */
+    public function getKaten()
+    {
+        return $this->katen;
+    }
+
+    /**
+     * Set katgr
+     *
+     * @param string $katgr
+     *
+     * @return Kategoria
+     */
+    public function setKatgr($katgr)
+    {
+        $this->katgr = $katgr;
+
+        return $this;
+    }
+
+    /**
+     * Get katgr
+     *
+     * @return string
+     */
+    public function getKatgr()
+    {
+        return $this->katgr;
+    }
+
+    /**
+     * Get katid
+     *
+     * @return integer
+     */
+    public function getKatid()
+    {
+        return $this->katid;
+    }
+}

@@ -36,5 +36,62 @@ class Komentarz
     private $idkomentarz;
 
 
-}
 
+    /**
+     * Set idogloszenia
+     *
+     * @param integer $idogloszenia
+     *
+     * @return Komentarz
+     */
+    public function setIdogloszenia($idogloszenia)
+    {
+        $this->idogloszenia = $idogloszenia;
+
+        return $this;
+    }
+
+    /**
+     * Get idogloszenia
+     *
+     * @return integer
+     */
+    public function getIdogloszenia()
+    {
+        return $this->idogloszenia;
+    }
+
+    /**
+     * Set tresckomentarz
+     *
+     * @param string $tresckomentarz
+     *
+     * @return Komentarz
+     */
+    public function setTresckomentarz($tresckomentarz)
+    {
+        $this->tresckomentarz = $tresckomentarz;
+
+        return $this;
+    }
+
+    /**
+     * Get tresckomentarz
+     *
+     * @return string
+     */
+    public function getTresckomentarz()
+    {
+        return $this->tresckomentarz;
+    }
+
+    /**
+     * Get idkomentarz
+     *
+     * @return integer
+     */
+    public function getIdkomentarz()
+    {
+        return $this->idkomentarz;
+    }
+}

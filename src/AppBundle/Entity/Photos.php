@@ -15,6 +15,7 @@ class Photos
     /**
      * @var integer
      *
+     * @ORM\Id
      * @ORM\Column(name="photoObjectId", type="integer", nullable=false)
      */
     private $photoobjectid = '0';
@@ -30,12 +31,14 @@ class Photos
      * @var integer
      *
      * @ORM\Column(name="photoId", type="integer")
-     * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $photoid;
 
-
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Object", mappedBy="photosGet")
+     */
+    private $photosCity;
 
     /**
      * Set photoobjectid
@@ -93,5 +96,66 @@ class Photos
     public function getPhotoid()
     {
         return $this->photoid;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPhotosCity()
+    {
+        return $this->photosCity;
+    }
+
+    /**
+     * @param mixed $photosCity
+     */
+    public function setPhotosCity($photosCity)
+    {
+        $this->photosCity = $photosCity;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->photosCity = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add photosCity
+     *
+     * @param \AppBundle\Entity\Object $photosCity
+     *
+     * @return Photos
+     */
+    public function addPhotosCity(\AppBundle\Entity\Object $photosCity)
+    {
+        $this->photosCity[] = $photosCity;
+
+        return $this;
+    }
+
+    /**
+     * Remove photosCity
+     *
+     * @param \AppBundle\Entity\Object $photosCity
+     */
+    public function removePhotosCity(\AppBundle\Entity\Object $photosCity)
+    {
+        $this->photosCity->removeElement($photosCity);
+    }
+
+    /**
+     * Set photoid
+     *
+     * @param integer $photoid
+     *
+     * @return Photos
+     */
+    public function setPhotoid($photoid)
+    {
+        $this->photoid = $photoid;
+
+        return $this;
     }
 }

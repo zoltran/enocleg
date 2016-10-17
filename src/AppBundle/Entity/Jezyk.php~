@@ -29,5 +29,38 @@ class Jezyk
     private $jezid;
 
 
-}
 
+    /**
+     * Set jezname
+     *
+     * @param string $jezname
+     *
+     * @return Jezyk
+     */
+    public function setJezname($jezname)
+    {
+        $this->jezname = $jezname;
+
+        return $this;
+    }
+
+    /**
+     * Get jezname
+     *
+     * @return string
+     */
+    public function getJezname()
+    {
+        return $this->jezname;
+    }
+
+    /**
+     * Get jezid
+     *
+     * @return integer
+     */
+    public function getJezid()
+    {
+        return $this->jezid;
+    }
+}

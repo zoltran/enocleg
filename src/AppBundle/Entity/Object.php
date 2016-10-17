@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use AppBundle\Resources\ObjectRepository;
 
@@ -44,8 +45,6 @@ class Object
     /**
      * @var integer
      *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Miasto", inversedBy="objectCity")
-     * @ORM\JoinColumn(name="obCity", referencedColumnName="miastoId")
      * @ORM\Column(name="obCity", type="integer", nullable=false)
      */
     private $obcity = '0';
@@ -451,25 +450,37 @@ class Object
      */
     private $obid;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Miasto", inversedBy="objectCity")
+     * @ORM\JoinColumn(name="obCity", referencedColumnName="miastoId")
+     */
+    private $cityName;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Photos", inversedBy="photosCity")
+     * @ORM\JoinColumn(name="obId", referencedColumnName="photoObjectId")
+     */
+    private $photosGet;
 
 
     /**
-     * Set obname
-     *
-     * @param string $obname
-     *
-     * @return Object
+     * Object constructor.
      */
-    public function setObname($obname)
+    public function __construct()
     {
-        $this->obname = $obname;
-
-        return $this;
+        $this->cityName = new ArrayCollection();
+        $this->photosGet = new ArrayCollection();
     }
 
     /**
-     * Get obname
-     *
+     * @return int
+     */
+    public function getObid()
+    {
+        return $this->obid;
+    }
+
+    /**
      * @return string
      */
     public function getObname()
@@ -478,23 +489,15 @@ class Object
     }
 
     /**
-     * Set obtypeid
-     *
-     * @param integer $obtypeid
-     *
-     * @return Object
+     * @param string $obname
      */
-    public function setObtypeid($obtypeid)
+    public function setObname($obname)
     {
-        $this->obtypeid = $obtypeid;
-
-        return $this;
+        $this->obname = $obname;
     }
 
     /**
-     * Get obtypeid
-     *
-     * @return integer
+     * @return int
      */
     public function getObtypeid()
     {
@@ -502,23 +505,15 @@ class Object
     }
 
     /**
-     * Set obregion
-     *
-     * @param integer $obregion
-     *
-     * @return Object
+     * @param int $obtypeid
      */
-    public function setObregion($obregion)
+    public function setObtypeid($obtypeid)
     {
-        $this->obregion = $obregion;
-
-        return $this;
+        $this->obtypeid = $obtypeid;
     }
 
     /**
-     * Get obregion
-     *
-     * @return integer
+     * @return int
      */
     public function getObregion()
     {
@@ -526,23 +521,15 @@ class Object
     }
 
     /**
-     * Set obstateid
-     *
-     * @param integer $obstateid
-     *
-     * @return Object
+     * @param int $obregion
      */
-    public function setObstateid($obstateid)
+    public function setObregion($obregion)
     {
-        $this->obstateid = $obstateid;
-
-        return $this;
+        $this->obregion = $obregion;
     }
 
     /**
-     * Get obstateid
-     *
-     * @return integer
+     * @return int
      */
     public function getObstateid()
     {
@@ -550,23 +537,15 @@ class Object
     }
 
     /**
-     * Set obcity
-     *
-     * @param integer $obcity
-     *
-     * @return Object
+     * @param int $obstateid
      */
-    public function setObcity($obcity)
+    public function setObstateid($obstateid)
     {
-        $this->obcity = $obcity;
-
-        return $this;
+        $this->obstateid = $obstateid;
     }
 
     /**
-     * Get obcity
-     *
-     * @return integer
+     * @return int
      */
     public function getObcity()
     {
@@ -574,22 +553,14 @@ class Object
     }
 
     /**
-     * Set obdate
-     *
-     * @param \DateTime $obdate
-     *
-     * @return Object
+     * @param int $obcity
      */
-    public function setObdate($obdate)
+    public function setObcity($obcity)
     {
-        $this->obdate = $obdate;
-
-        return $this;
+        $this->obcity = $obcity;
     }
 
     /**
-     * Get obdate
-     *
      * @return \DateTime
      */
     public function getObdate()
@@ -598,22 +569,14 @@ class Object
     }
 
     /**
-     * Set obdateend
-     *
-     * @param \DateTime $obdateend
-     *
-     * @return Object
+     * @param \DateTime $obdate
      */
-    public function setObdateend($obdateend)
+    public function setObdate($obdate)
     {
-        $this->obdateend = $obdateend;
-
-        return $this;
+        $this->obdate = $obdate;
     }
 
     /**
-     * Get obdateend
-     *
      * @return \DateTime
      */
     public function getObdateend()
@@ -622,22 +585,14 @@ class Object
     }
 
     /**
-     * Set obtxt
-     *
-     * @param string $obtxt
-     *
-     * @return Object
+     * @param \DateTime $obdateend
      */
-    public function setObtxt($obtxt)
+    public function setObdateend($obdateend)
     {
-        $this->obtxt = $obtxt;
-
-        return $this;
+        $this->obdateend = $obdateend;
     }
 
     /**
-     * Get obtxt
-     *
      * @return string
      */
     public function getObtxt()
@@ -646,22 +601,14 @@ class Object
     }
 
     /**
-     * Set obcennik
-     *
-     * @param string $obcennik
-     *
-     * @return Object
+     * @param string $obtxt
      */
-    public function setObcennik($obcennik)
+    public function setObtxt($obtxt)
     {
-        $this->obcennik = $obcennik;
-
-        return $this;
+        $this->obtxt = $obtxt;
     }
 
     /**
-     * Get obcennik
-     *
      * @return string
      */
     public function getObcennik()
@@ -670,23 +617,15 @@ class Object
     }
 
     /**
-     * Set obpriceon
-     *
-     * @param integer $obpriceon
-     *
-     * @return Object
+     * @param string $obcennik
      */
-    public function setObpriceon($obpriceon)
+    public function setObcennik($obcennik)
     {
-        $this->obpriceon = $obpriceon;
-
-        return $this;
+        $this->obcennik = $obcennik;
     }
 
     /**
-     * Get obpriceon
-     *
-     * @return integer
+     * @return int
      */
     public function getObpriceon()
     {
@@ -694,22 +633,14 @@ class Object
     }
 
     /**
-     * Set obuslugi
-     *
-     * @param string $obuslugi
-     *
-     * @return Object
+     * @param int $obpriceon
      */
-    public function setObuslugi($obuslugi)
+    public function setObpriceon($obpriceon)
     {
-        $this->obuslugi = $obuslugi;
-
-        return $this;
+        $this->obpriceon = $obpriceon;
     }
 
     /**
-     * Get obuslugi
-     *
      * @return string
      */
     public function getObuslugi()
@@ -718,23 +649,15 @@ class Object
     }
 
     /**
-     * Set obuserid
-     *
-     * @param integer $obuserid
-     *
-     * @return Object
+     * @param string $obuslugi
      */
-    public function setObuserid($obuserid)
+    public function setObuslugi($obuslugi)
     {
-        $this->obuserid = $obuserid;
-
-        return $this;
+        $this->obuslugi = $obuslugi;
     }
 
     /**
-     * Get obuserid
-     *
-     * @return integer
+     * @return int
      */
     public function getObuserid()
     {
@@ -742,22 +665,14 @@ class Object
     }
 
     /**
-     * Set obtel
-     *
-     * @param string $obtel
-     *
-     * @return Object
+     * @param int $obuserid
      */
-    public function setObtel($obtel)
+    public function setObuserid($obuserid)
     {
-        $this->obtel = $obtel;
-
-        return $this;
+        $this->obuserid = $obuserid;
     }
 
     /**
-     * Get obtel
-     *
      * @return string
      */
     public function getObtel()
@@ -766,22 +681,14 @@ class Object
     }
 
     /**
-     * Set obemail
-     *
-     * @param string $obemail
-     *
-     * @return Object
+     * @param string $obtel
      */
-    public function setObemail($obemail)
+    public function setObtel($obtel)
     {
-        $this->obemail = $obemail;
-
-        return $this;
+        $this->obtel = $obtel;
     }
 
     /**
-     * Get obemail
-     *
      * @return string
      */
     public function getObemail()
@@ -790,22 +697,14 @@ class Object
     }
 
     /**
-     * Set obwww
-     *
-     * @param string $obwww
-     *
-     * @return Object
+     * @param string $obemail
      */
-    public function setObwww($obwww)
+    public function setObemail($obemail)
     {
-        $this->obwww = $obwww;
-
-        return $this;
+        $this->obemail = $obemail;
     }
 
     /**
-     * Get obwww
-     *
      * @return string
      */
     public function getObwww()
@@ -814,23 +713,15 @@ class Object
     }
 
     /**
-     * Set obconfirm
-     *
-     * @param integer $obconfirm
-     *
-     * @return Object
+     * @param string $obwww
      */
-    public function setObconfirm($obconfirm)
+    public function setObwww($obwww)
     {
-        $this->obconfirm = $obconfirm;
-
-        return $this;
+        $this->obwww = $obwww;
     }
 
     /**
-     * Get obconfirm
-     *
-     * @return integer
+     * @return int
      */
     public function getObconfirm()
     {
@@ -838,22 +729,14 @@ class Object
     }
 
     /**
-     * Set obadress
-     *
-     * @param string $obadress
-     *
-     * @return Object
+     * @param int $obconfirm
      */
-    public function setObadress($obadress)
+    public function setObconfirm($obconfirm)
     {
-        $this->obadress = $obadress;
-
-        return $this;
+        $this->obconfirm = $obconfirm;
     }
 
     /**
-     * Get obadress
-     *
      * @return string
      */
     public function getObadress()
@@ -862,23 +745,15 @@ class Object
     }
 
     /**
-     * Set obpromo
-     *
-     * @param integer $obpromo
-     *
-     * @return Object
+     * @param string $obadress
      */
-    public function setObpromo($obpromo)
+    public function setObadress($obadress)
     {
-        $this->obpromo = $obpromo;
-
-        return $this;
+        $this->obadress = $obadress;
     }
 
     /**
-     * Get obpromo
-     *
-     * @return integer
+     * @return int
      */
     public function getObpromo()
     {
@@ -886,22 +761,14 @@ class Object
     }
 
     /**
-     * Set obpromodateend
-     *
-     * @param \DateTime $obpromodateend
-     *
-     * @return Object
+     * @param int $obpromo
      */
-    public function setObpromodateend($obpromodateend)
+    public function setObpromo($obpromo)
     {
-        $this->obpromodateend = $obpromodateend;
-
-        return $this;
+        $this->obpromo = $obpromo;
     }
 
     /**
-     * Get obpromodateend
-     *
      * @return \DateTime
      */
     public function getObpromodateend()
@@ -910,23 +777,15 @@ class Object
     }
 
     /**
-     * Set obwyroz
-     *
-     * @param integer $obwyroz
-     *
-     * @return Object
+     * @param \DateTime $obpromodateend
      */
-    public function setObwyroz($obwyroz)
+    public function setObpromodateend($obpromodateend)
     {
-        $this->obwyroz = $obwyroz;
-
-        return $this;
+        $this->obpromodateend = $obpromodateend;
     }
 
     /**
-     * Get obwyroz
-     *
-     * @return integer
+     * @return int
      */
     public function getObwyroz()
     {
@@ -934,22 +793,14 @@ class Object
     }
 
     /**
-     * Set obwyrozdateend
-     *
-     * @param \DateTime $obwyrozdateend
-     *
-     * @return Object
+     * @param int $obwyroz
      */
-    public function setObwyrozdateend($obwyrozdateend)
+    public function setObwyroz($obwyroz)
     {
-        $this->obwyrozdateend = $obwyrozdateend;
-
-        return $this;
+        $this->obwyroz = $obwyroz;
     }
 
     /**
-     * Get obwyrozdateend
-     *
      * @return \DateTime
      */
     public function getObwyrozdateend()
@@ -958,23 +809,15 @@ class Object
     }
 
     /**
-     * Set obkolor
-     *
-     * @param integer $obkolor
-     *
-     * @return Object
+     * @param \DateTime $obwyrozdateend
      */
-    public function setObkolor($obkolor)
+    public function setObwyrozdateend($obwyrozdateend)
     {
-        $this->obkolor = $obkolor;
-
-        return $this;
+        $this->obwyrozdateend = $obwyrozdateend;
     }
 
     /**
-     * Get obkolor
-     *
-     * @return integer
+     * @return int
      */
     public function getObkolor()
     {
@@ -982,22 +825,14 @@ class Object
     }
 
     /**
-     * Set obkolordateend
-     *
-     * @param \DateTime $obkolordateend
-     *
-     * @return Object
+     * @param int $obkolor
      */
-    public function setObkolordateend($obkolordateend)
+    public function setObkolor($obkolor)
     {
-        $this->obkolordateend = $obkolordateend;
-
-        return $this;
+        $this->obkolor = $obkolor;
     }
 
     /**
-     * Get obkolordateend
-     *
      * @return \DateTime
      */
     public function getObkolordateend()
@@ -1006,23 +841,15 @@ class Object
     }
 
     /**
-     * Set clicked
-     *
-     * @param integer $clicked
-     *
-     * @return Object
+     * @param \DateTime $obkolordateend
      */
-    public function setClicked($clicked)
+    public function setObkolordateend($obkolordateend)
     {
-        $this->clicked = $clicked;
-
-        return $this;
+        $this->obkolordateend = $obkolordateend;
     }
 
     /**
-     * Get clicked
-     *
-     * @return integer
+     * @return int
      */
     public function getClicked()
     {
@@ -1030,23 +857,15 @@ class Object
     }
 
     /**
-     * Set views
-     *
-     * @param integer $views
-     *
-     * @return Object
+     * @param int $clicked
      */
-    public function setViews($views)
+    public function setClicked($clicked)
     {
-        $this->views = $views;
-
-        return $this;
+        $this->clicked = $clicked;
     }
 
     /**
-     * Get views
-     *
-     * @return integer
+     * @return int
      */
     public function getViews()
     {
@@ -1054,22 +873,14 @@ class Object
     }
 
     /**
-     * Set gg
-     *
-     * @param string $gg
-     *
-     * @return Object
+     * @param int $views
      */
-    public function setGg($gg)
+    public function setViews($views)
     {
-        $this->gg = $gg;
-
-        return $this;
+        $this->views = $views;
     }
 
     /**
-     * Get gg
-     *
      * @return string
      */
     public function getGg()
@@ -1078,22 +889,14 @@ class Object
     }
 
     /**
-     * Set lat
-     *
-     * @param float $lat
-     *
-     * @return Object
+     * @param string $gg
      */
-    public function setLat($lat)
+    public function setGg($gg)
     {
-        $this->lat = $lat;
-
-        return $this;
+        $this->gg = $gg;
     }
 
     /**
-     * Get lat
-     *
      * @return float
      */
     public function getLat()
@@ -1102,22 +905,14 @@ class Object
     }
 
     /**
-     * Set lng
-     *
-     * @param float $lng
-     *
-     * @return Object
+     * @param float $lat
      */
-    public function setLng($lng)
+    public function setLat($lat)
     {
-        $this->lng = $lng;
-
-        return $this;
+        $this->lat = $lat;
     }
 
     /**
-     * Get lng
-     *
      * @return float
      */
     public function getLng()
@@ -1126,23 +921,15 @@ class Object
     }
 
     /**
-     * Set zoom
-     *
-     * @param integer $zoom
-     *
-     * @return Object
+     * @param float $lng
      */
-    public function setZoom($zoom)
+    public function setLng($lng)
     {
-        $this->zoom = $zoom;
-
-        return $this;
+        $this->lng = $lng;
     }
 
     /**
-     * Get zoom
-     *
-     * @return integer
+     * @return int
      */
     public function getZoom()
     {
@@ -1150,22 +937,14 @@ class Object
     }
 
     /**
-     * Set obklucze
-     *
-     * @param string $obklucze
-     *
-     * @return Object
+     * @param int $zoom
      */
-    public function setObklucze($obklucze)
+    public function setZoom($zoom)
     {
-        $this->obklucze = $obklucze;
-
-        return $this;
+        $this->zoom = $zoom;
     }
 
     /**
-     * Get obklucze
-     *
      * @return string
      */
     public function getObklucze()
@@ -1174,22 +953,14 @@ class Object
     }
 
     /**
-     * Set obopis
-     *
-     * @param string $obopis
-     *
-     * @return Object
+     * @param string $obklucze
      */
-    public function setObopis($obopis)
+    public function setObklucze($obklucze)
     {
-        $this->obopis = $obopis;
-
-        return $this;
+        $this->obklucze = $obklucze;
     }
 
     /**
-     * Get obopis
-     *
      * @return string
      */
     public function getObopis()
@@ -1198,23 +969,15 @@ class Object
     }
 
     /**
-     * Set obkat
-     *
-     * @param integer $obkat
-     *
-     * @return Object
+     * @param string $obopis
      */
-    public function setObkat($obkat)
+    public function setObopis($obopis)
     {
-        $this->obkat = $obkat;
-
-        return $this;
+        $this->obopis = $obopis;
     }
 
     /**
-     * Get obkat
-     *
-     * @return integer
+     * @return int
      */
     public function getObkat()
     {
@@ -1222,23 +985,15 @@ class Object
     }
 
     /**
-     * Set objezyk
-     *
-     * @param integer $objezyk
-     *
-     * @return Object
+     * @param int $obkat
      */
-    public function setObjezyk($objezyk)
+    public function setObkat($obkat)
     {
-        $this->objezyk = $objezyk;
-
-        return $this;
+        $this->obkat = $obkat;
     }
 
     /**
-     * Get objezyk
-     *
-     * @return integer
+     * @return int
      */
     public function getObjezyk()
     {
@@ -1246,23 +1001,15 @@ class Object
     }
 
     /**
-     * Set obroom
-     *
-     * @param integer $obroom
-     *
-     * @return Object
+     * @param int $objezyk
      */
-    public function setObroom($obroom)
+    public function setObjezyk($objezyk)
     {
-        $this->obroom = $obroom;
-
-        return $this;
+        $this->objezyk = $objezyk;
     }
 
     /**
-     * Get obroom
-     *
-     * @return integer
+     * @return int
      */
     public function getObroom()
     {
@@ -1270,23 +1017,15 @@ class Object
     }
 
     /**
-     * Set obbed
-     *
-     * @param integer $obbed
-     *
-     * @return Object
+     * @param int $obroom
      */
-    public function setObbed($obbed)
+    public function setObroom($obroom)
     {
-        $this->obbed = $obbed;
-
-        return $this;
+        $this->obroom = $obroom;
     }
 
     /**
-     * Get obbed
-     *
-     * @return integer
+     * @return int
      */
     public function getObbed()
     {
@@ -1294,22 +1033,14 @@ class Object
     }
 
     /**
-     * Set obokolica
-     *
-     * @param string $obokolica
-     *
-     * @return Object
+     * @param int $obbed
      */
-    public function setObokolica($obokolica)
+    public function setObbed($obbed)
     {
-        $this->obokolica = $obokolica;
-
-        return $this;
+        $this->obbed = $obbed;
     }
 
     /**
-     * Get obokolica
-     *
      * @return string
      */
     public function getObokolica()
@@ -1318,22 +1049,14 @@ class Object
     }
 
     /**
-     * Set oba
-     *
-     * @param string $oba
-     *
-     * @return Object
+     * @param string $obokolica
      */
-    public function setOba($oba)
+    public function setObokolica($obokolica)
     {
-        $this->oba = $oba;
-
-        return $this;
+        $this->obokolica = $obokolica;
     }
 
     /**
-     * Get oba
-     *
      * @return string
      */
     public function getOba()
@@ -1342,22 +1065,14 @@ class Object
     }
 
     /**
-     * Set obb
-     *
-     * @param string $obb
-     *
-     * @return Object
+     * @param string $oba
      */
-    public function setObb($obb)
+    public function setOba($oba)
     {
-        $this->obb = $obb;
-
-        return $this;
+        $this->oba = $oba;
     }
 
     /**
-     * Get obb
-     *
      * @return string
      */
     public function getObb()
@@ -1366,22 +1081,14 @@ class Object
     }
 
     /**
-     * Set obc
-     *
-     * @param string $obc
-     *
-     * @return Object
+     * @param string $obb
      */
-    public function setObc($obc)
+    public function setObb($obb)
     {
-        $this->obc = $obc;
-
-        return $this;
+        $this->obb = $obb;
     }
 
     /**
-     * Get obc
-     *
      * @return string
      */
     public function getObc()
@@ -1390,23 +1097,15 @@ class Object
     }
 
     /**
-     * Set obcenaa1
-     *
-     * @param integer $obcenaa1
-     *
-     * @return Object
+     * @param string $obc
      */
-    public function setObcenaa1($obcenaa1)
+    public function setObc($obc)
     {
-        $this->obcenaa1 = $obcenaa1;
-
-        return $this;
+        $this->obc = $obc;
     }
 
     /**
-     * Get obcenaa1
-     *
-     * @return integer
+     * @return int
      */
     public function getObcenaa1()
     {
@@ -1414,23 +1113,15 @@ class Object
     }
 
     /**
-     * Set obcenaa2
-     *
-     * @param integer $obcenaa2
-     *
-     * @return Object
+     * @param int $obcenaa1
      */
-    public function setObcenaa2($obcenaa2)
+    public function setObcenaa1($obcenaa1)
     {
-        $this->obcenaa2 = $obcenaa2;
-
-        return $this;
+        $this->obcenaa1 = $obcenaa1;
     }
 
     /**
-     * Get obcenaa2
-     *
-     * @return integer
+     * @return int
      */
     public function getObcenaa2()
     {
@@ -1438,23 +1129,15 @@ class Object
     }
 
     /**
-     * Set obcenab1
-     *
-     * @param integer $obcenab1
-     *
-     * @return Object
+     * @param int $obcenaa2
      */
-    public function setObcenab1($obcenab1)
+    public function setObcenaa2($obcenaa2)
     {
-        $this->obcenab1 = $obcenab1;
-
-        return $this;
+        $this->obcenaa2 = $obcenaa2;
     }
 
     /**
-     * Get obcenab1
-     *
-     * @return integer
+     * @return int
      */
     public function getObcenab1()
     {
@@ -1462,23 +1145,15 @@ class Object
     }
 
     /**
-     * Set obcenab2
-     *
-     * @param integer $obcenab2
-     *
-     * @return Object
+     * @param int $obcenab1
      */
-    public function setObcenab2($obcenab2)
+    public function setObcenab1($obcenab1)
     {
-        $this->obcenab2 = $obcenab2;
-
-        return $this;
+        $this->obcenab1 = $obcenab1;
     }
 
     /**
-     * Get obcenab2
-     *
-     * @return integer
+     * @return int
      */
     public function getObcenab2()
     {
@@ -1486,23 +1161,15 @@ class Object
     }
 
     /**
-     * Set obcenac1
-     *
-     * @param integer $obcenac1
-     *
-     * @return Object
+     * @param int $obcenab2
      */
-    public function setObcenac1($obcenac1)
+    public function setObcenab2($obcenab2)
     {
-        $this->obcenac1 = $obcenac1;
-
-        return $this;
+        $this->obcenab2 = $obcenab2;
     }
 
     /**
-     * Get obcenac1
-     *
-     * @return integer
+     * @return int
      */
     public function getObcenac1()
     {
@@ -1510,23 +1177,15 @@ class Object
     }
 
     /**
-     * Set obcenac2
-     *
-     * @param integer $obcenac2
-     *
-     * @return Object
+     * @param int $obcenac1
      */
-    public function setObcenac2($obcenac2)
+    public function setObcenac1($obcenac1)
     {
-        $this->obcenac2 = $obcenac2;
-
-        return $this;
+        $this->obcenac1 = $obcenac1;
     }
 
     /**
-     * Get obcenac2
-     *
-     * @return integer
+     * @return int
      */
     public function getObcenac2()
     {
@@ -1534,23 +1193,15 @@ class Object
     }
 
     /**
-     * Set obcenad1
-     *
-     * @param integer $obcenad1
-     *
-     * @return Object
+     * @param int $obcenac2
      */
-    public function setObcenad1($obcenad1)
+    public function setObcenac2($obcenac2)
     {
-        $this->obcenad1 = $obcenad1;
-
-        return $this;
+        $this->obcenac2 = $obcenac2;
     }
 
     /**
-     * Get obcenad1
-     *
-     * @return integer
+     * @return int
      */
     public function getObcenad1()
     {
@@ -1558,23 +1209,15 @@ class Object
     }
 
     /**
-     * Set obcenad2
-     *
-     * @param integer $obcenad2
-     *
-     * @return Object
+     * @param int $obcenad1
      */
-    public function setObcenad2($obcenad2)
+    public function setObcenad1($obcenad1)
     {
-        $this->obcenad2 = $obcenad2;
-
-        return $this;
+        $this->obcenad1 = $obcenad1;
     }
 
     /**
-     * Get obcenad2
-     *
-     * @return integer
+     * @return int
      */
     public function getObcenad2()
     {
@@ -1582,23 +1225,15 @@ class Object
     }
 
     /**
-     * Set obrabat
-     *
-     * @param integer $obrabat
-     *
-     * @return Object
+     * @param int $obcenad2
      */
-    public function setObrabat($obrabat)
+    public function setObcenad2($obcenad2)
     {
-        $this->obrabat = $obrabat;
-
-        return $this;
+        $this->obcenad2 = $obcenad2;
     }
 
     /**
-     * Get obrabat
-     *
-     * @return integer
+     * @return int
      */
     public function getObrabat()
     {
@@ -1606,22 +1241,14 @@ class Object
     }
 
     /**
-     * Set obmiejsce1
-     *
-     * @param string $obmiejsce1
-     *
-     * @return Object
+     * @param int $obrabat
      */
-    public function setObmiejsce1($obmiejsce1)
+    public function setObrabat($obrabat)
     {
-        $this->obmiejsce1 = $obmiejsce1;
-
-        return $this;
+        $this->obrabat = $obrabat;
     }
 
     /**
-     * Get obmiejsce1
-     *
      * @return string
      */
     public function getObmiejsce1()
@@ -1630,22 +1257,14 @@ class Object
     }
 
     /**
-     * Set obmiejsce2
-     *
-     * @param string $obmiejsce2
-     *
-     * @return Object
+     * @param string $obmiejsce1
      */
-    public function setObmiejsce2($obmiejsce2)
+    public function setObmiejsce1($obmiejsce1)
     {
-        $this->obmiejsce2 = $obmiejsce2;
-
-        return $this;
+        $this->obmiejsce1 = $obmiejsce1;
     }
 
     /**
-     * Get obmiejsce2
-     *
      * @return string
      */
     public function getObmiejsce2()
@@ -1654,22 +1273,14 @@ class Object
     }
 
     /**
-     * Set obmiejsce3
-     *
-     * @param string $obmiejsce3
-     *
-     * @return Object
+     * @param string $obmiejsce2
      */
-    public function setObmiejsce3($obmiejsce3)
+    public function setObmiejsce2($obmiejsce2)
     {
-        $this->obmiejsce3 = $obmiejsce3;
-
-        return $this;
+        $this->obmiejsce2 = $obmiejsce2;
     }
 
     /**
-     * Get obmiejsce3
-     *
      * @return string
      */
     public function getObmiejsce3()
@@ -1678,22 +1289,14 @@ class Object
     }
 
     /**
-     * Set obmiejsce4
-     *
-     * @param string $obmiejsce4
-     *
-     * @return Object
+     * @param string $obmiejsce3
      */
-    public function setObmiejsce4($obmiejsce4)
+    public function setObmiejsce3($obmiejsce3)
     {
-        $this->obmiejsce4 = $obmiejsce4;
-
-        return $this;
+        $this->obmiejsce3 = $obmiejsce3;
     }
 
     /**
-     * Get obmiejsce4
-     *
      * @return string
      */
     public function getObmiejsce4()
@@ -1702,22 +1305,14 @@ class Object
     }
 
     /**
-     * Set obdostepnosc
-     *
-     * @param string $obdostepnosc
-     *
-     * @return Object
+     * @param string $obmiejsce4
      */
-    public function setObdostepnosc($obdostepnosc)
+    public function setObmiejsce4($obmiejsce4)
     {
-        $this->obdostepnosc = $obdostepnosc;
-
-        return $this;
+        $this->obmiejsce4 = $obmiejsce4;
     }
 
     /**
-     * Get obdostepnosc
-     *
      * @return string
      */
     public function getObdostepnosc()
@@ -1726,23 +1321,15 @@ class Object
     }
 
     /**
-     * Set obiloscapart
-     *
-     * @param integer $obiloscapart
-     *
-     * @return Object
+     * @param string $obdostepnosc
      */
-    public function setObiloscapart($obiloscapart)
+    public function setObdostepnosc($obdostepnosc)
     {
-        $this->obiloscapart = $obiloscapart;
-
-        return $this;
+        $this->obdostepnosc = $obdostepnosc;
     }
 
     /**
-     * Get obiloscapart
-     *
-     * @return integer
+     * @return int
      */
     public function getObiloscapart()
     {
@@ -1750,23 +1337,15 @@ class Object
     }
 
     /**
-     * Set obpokoj1ilosc
-     *
-     * @param integer $obpokoj1ilosc
-     *
-     * @return Object
+     * @param int $obiloscapart
      */
-    public function setObpokoj1ilosc($obpokoj1ilosc)
+    public function setObiloscapart($obiloscapart)
     {
-        $this->obpokoj1ilosc = $obpokoj1ilosc;
-
-        return $this;
+        $this->obiloscapart = $obiloscapart;
     }
 
     /**
-     * Get obpokoj1ilosc
-     *
-     * @return integer
+     * @return int
      */
     public function getObpokoj1ilosc()
     {
@@ -1774,23 +1353,15 @@ class Object
     }
 
     /**
-     * Set obpokoj2ilosc
-     *
-     * @param integer $obpokoj2ilosc
-     *
-     * @return Object
+     * @param int $obpokoj1ilosc
      */
-    public function setObpokoj2ilosc($obpokoj2ilosc)
+    public function setObpokoj1ilosc($obpokoj1ilosc)
     {
-        $this->obpokoj2ilosc = $obpokoj2ilosc;
-
-        return $this;
+        $this->obpokoj1ilosc = $obpokoj1ilosc;
     }
 
     /**
-     * Get obpokoj2ilosc
-     *
-     * @return integer
+     * @return int
      */
     public function getObpokoj2ilosc()
     {
@@ -1798,23 +1369,15 @@ class Object
     }
 
     /**
-     * Set obpokoj3ilosc
-     *
-     * @param integer $obpokoj3ilosc
-     *
-     * @return Object
+     * @param int $obpokoj2ilosc
      */
-    public function setObpokoj3ilosc($obpokoj3ilosc)
+    public function setObpokoj2ilosc($obpokoj2ilosc)
     {
-        $this->obpokoj3ilosc = $obpokoj3ilosc;
-
-        return $this;
+        $this->obpokoj2ilosc = $obpokoj2ilosc;
     }
 
     /**
-     * Get obpokoj3ilosc
-     *
-     * @return integer
+     * @return int
      */
     public function getObpokoj3ilosc()
     {
@@ -1822,23 +1385,15 @@ class Object
     }
 
     /**
-     * Set obpunkty
-     *
-     * @param integer $obpunkty
-     *
-     * @return Object
+     * @param int $obpokoj3ilosc
      */
-    public function setObpunkty($obpunkty)
+    public function setObpokoj3ilosc($obpokoj3ilosc)
     {
-        $this->obpunkty = $obpunkty;
-
-        return $this;
+        $this->obpokoj3ilosc = $obpokoj3ilosc;
     }
 
     /**
-     * Get obpunkty
-     *
-     * @return integer
+     * @return int
      */
     public function getObpunkty()
     {
@@ -1846,22 +1401,14 @@ class Object
     }
 
     /**
-     * Set obfilm
-     *
-     * @param string $obfilm
-     *
-     * @return Object
+     * @param int $obpunkty
      */
-    public function setObfilm($obfilm)
+    public function setObpunkty($obpunkty)
     {
-        $this->obfilm = $obfilm;
-
-        return $this;
+        $this->obpunkty = $obpunkty;
     }
 
     /**
-     * Get obfilm
-     *
      * @return string
      */
     public function getObfilm()
@@ -1870,22 +1417,14 @@ class Object
     }
 
     /**
-     * Set obip
-     *
-     * @param string $obip
-     *
-     * @return Object
+     * @param string $obfilm
      */
-    public function setObip($obip)
+    public function setObfilm($obfilm)
     {
-        $this->obip = $obip;
-
-        return $this;
+        $this->obfilm = $obfilm;
     }
 
     /**
-     * Get obip
-     *
      * @return string
      */
     public function getObip()
@@ -1894,22 +1433,14 @@ class Object
     }
 
     /**
-     * Set obmiasto
-     *
-     * @param string $obmiasto
-     *
-     * @return Object
+     * @param string $obip
      */
-    public function setObmiasto($obmiasto)
+    public function setObip($obip)
     {
-        $this->obmiasto = $obmiasto;
-
-        return $this;
+        $this->obip = $obip;
     }
 
     /**
-     * Get obmiasto
-     *
      * @return string
      */
     public function getObmiasto()
@@ -1918,12 +1449,68 @@ class Object
     }
 
     /**
-     * Get obid
-     *
-     * @return integer
+     * @param string $obmiasto
      */
-    public function getObid()
+    public function setObmiasto($obmiasto)
     {
-        return $this->obid;
+        $this->obmiasto = $obmiasto;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getCityName()
+    {
+        return $this->cityName;
+    }
+
+    /**
+     * @param mixed $cityName
+     */
+    public function setCityName($cityName)
+    {
+        $this->cityName = $cityName;
+    }
+
+    /**
+     * Add obiect
+     *
+     * @param \AppBundle\Entity\Miasto $obiect
+     *
+     * @return Object|Object
+     */
+    public function addObiect(\AppBundle\Entity\Miasto $obiect)
+    {
+        $this->cityName[] = $obiect;
+
+        return $this;
+    }
+
+    /**
+     * Remove obiect
+     *
+     * @param \AppBundle\Entity\Miasto $obiect
+     */
+    public function removeObiect(\AppBundle\Entity\Miasto $obiect)
+    {
+        $this->cityName->removeElement($obiect);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPhotosGet()
+    {
+        return $this->photosGet;
+    }
+
+    /**
+     * @param mixed $photosGet
+     */
+    public function setPhotosGet($photosGet)
+    {
+        $this->photosGet = $photosGet;
+    }
+
+
 }

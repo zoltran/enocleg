@@ -35,12 +35,10 @@ class Miasto
      */
     private $miastoid;
 
-//    /**
-//     * @var Object
-//     *
-//     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Object", mappedBy="Miasto" )
-//     */
-//    private $objectCity;
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Object", mappedBy="cityName")
+     */
+    private $objectCity;
 
 
 
@@ -102,19 +100,50 @@ class Miasto
         return $this->miastoid;
     }
 
-//    /**
-//     * @return array
-//     */
-//    public function getObjectCity()
-//    {
-//        return $this->objectCity;
-//    }
-//
-//    /**
-//     * @param array $objectCity
-//     */
-//    public function setObjectCity($objectCity)
-//    {
-//        $this->objectCity = $objectCity;
-//    }
+    /**
+     * @return \Doctrine\Common\Collections\ArrayCollection
+     */
+    public function getObjectCity()
+    {
+        return $this->objectCity;
+    }
+
+    /**
+     * @param Object $objectCity
+     */
+    public function setObjectCity($objectCity)
+    {
+        $this->objectCity = $objectCity;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->objectCity = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add objectCity
+     *
+     * @param \AppBundle\Entity\Object $objectCity
+     *
+     * @return Miasto
+     */
+    public function addObjectCity(\AppBundle\Entity\Object $objectCity)
+    {
+        $this->objectCity[] = $objectCity;
+
+        return $this;
+    }
+
+    /**
+     * Remove objectCity
+     *
+     * @param \AppBundle\Entity\Object $objectCity
+     */
+    public function removeObjectCity(\AppBundle\Entity\Object $objectCity)
+    {
+        $this->objectCity->removeElement($objectCity);
+    }
 }

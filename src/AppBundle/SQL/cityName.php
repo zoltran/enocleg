@@ -1,22 +1,25 @@
 <?php
-
-namespace AppBundle\SQL;
-
-
-class cityName
-{
-    public function getCityName($city)
-    {
-        $conn = $this->get('database_connection');
-        $miasto = $conn->fetchAll
-        ("
-            SELECT cit.miastoName, obj.obName 
-            FROM object obj 
-            Left JOIN miasto cit 
-            ON obj.obCity = cit.miastoId
-            WHERE cit.miastoName = '$city' 
-        ");
-
-        return $miasto;
-    }
-}
+//
+//namespace AppBundle\SQL;
+//
+//use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+//
+///**
+// * Class cityName
+// * @package AppBundle\SQL
+// */
+//class cityName extends Controller
+//{
+//    /**
+//     * @return string
+//     */
+//    protected function getCityName()
+//    {
+//        $object = $this->getDoctrine()->getManager()
+//            ->getRepository('AppBundle:Object')->find('1792');
+//
+//        $greatCity = $object->getObiects()->getMiastoname();
+//
+//        return $greatCity;
+//    }
+//}

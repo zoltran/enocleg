@@ -36,5 +36,62 @@ class Adv
     private $advid;
 
 
-}
 
+    /**
+     * Set advname
+     *
+     * @param string $advname
+     *
+     * @return Adv
+     */
+    public function setAdvname($advname)
+    {
+        $this->advname = $advname;
+
+        return $this;
+    }
+
+    /**
+     * Get advname
+     *
+     * @return string
+     */
+    public function getAdvname()
+    {
+        return $this->advname;
+    }
+
+    /**
+     * Set advhtml
+     *
+     * @param string $advhtml
+     *
+     * @return Adv
+     */
+    public function setAdvhtml($advhtml)
+    {
+        $this->advhtml = $advhtml;
+
+        return $this;
+    }
+
+    /**
+     * Get advhtml
+     *
+     * @return string
+     */
+    public function getAdvhtml()
+    {
+        return $this->advhtml;
+    }
+
+    /**
+     * Get advid
+     *
+     * @return integer
+     */
+    public function getAdvid()
+    {
+        return $this->advid;
+    }
+}
