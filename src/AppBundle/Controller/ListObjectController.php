@@ -17,20 +17,46 @@ class ListObjectController extends Controller
      */
     public function getObject()
     {
-        $idObject = 1815;
+        $em = $this->getDoctrine()->getManager()
+        -> getRepository('AppBundle:Object');
+        $object = $em->findAll();
 
-        $object = $this->getDoctrine()->getManager()
-            ->getRepository('AppBundle:Object')->find($idObject);
+//        $id = $this->getIdAdva($em);
+        foreach ($object as $adv){
+            $arrayTable = array();
+            $arrayTable = $adv->getObid();
 
-        $nameObject = $this->getObname($object);
-        $city = $this->getCityName($object);
-        $photo = $this->getMidiFoto($object);
+        }
+//        var_dump($jola);
+//        print $jola;
+//        $testowo = $this->getCityName();
+//        $nameObject = $object->getObname($objects);
+//
+//        $string = $object->getObtxt($objects);
+//        $string1 = strip_tags(html_entity_decode($string, ENT_QUOTES, "UTF-8"));
+//        $textObject = substr($string1, 0, 150);
 
-        return $this->render('List/listTest.html.twig', array(
-            'city' =>$city,
-            'photo' =>$photo,
-            'nameObject' => $nameObject
-    ));
+//        foreach ($object as $city){
+//            echo $object->get;
+//        }
+//        $city=array();
+
+//        $photo = $this->getMidiFoto($objects);
+
+        $allType = array(
+//            'city' => $city
+//            'photo' => $photo,
+//            'textObject' => $textObject,
+//            'nameObject' => $nameObject
+        );
+
+
+        return $this->render(':List:listTest.html.twig', array(
+//            'city' =>$city,
+//            'photo' =>$photo,
+//            'nameObject' => $nameObject
+            'allType' => $allType
+        ));
     }
 
     /**
@@ -39,6 +65,7 @@ class ListObjectController extends Controller
      */
     private function getCityName($object)
     {
+        print_r($object); die;
 
         $city = $object->getCityName()->getMiastoname();
 
@@ -46,15 +73,25 @@ class ListObjectController extends Controller
     }
 
     /**
-     * @param $object
      * @return mixed
      */
-    private function getMidiFoto($object)
+    protected function getIdAdva($em)
     {
-        $photo = $object->getPhotosGet()->getPhotourl();
+        $idAvd = $em ->getAdvid();
 
-        return $photo;
+        return $idAvd;
     }
+//
+//    /**
+//     * @param $object
+//     * @return mixed
+//     */
+//    private function getMidiFoto($object)
+//    {
+//        $photo = $object->getPhotosGet()->getPhotourl();
+//
+//        return $photo;
+//    }
 
 
 

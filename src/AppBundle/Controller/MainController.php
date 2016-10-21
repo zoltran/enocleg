@@ -2,8 +2,11 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Object;
+use Behat\Mink\Exception\ExpectationException;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Config\Definition\Exception\Exception;
 
 /**
  * Class MainController
@@ -16,29 +19,44 @@ class MainController extends Controller
      */
     public function mainController()
     {
-        $idObject = 1792;
+        $idObject = '1792';
+            $em = $this->getDoctrine()->getManager()
+                ->getRepository('AppBundle:Object');
+            $allDateObject = $em ->findAll();
+            $object = $em->find($idObject);
 
-        $object = $this->getDoctrine()->getManager()
-            ->getRepository('AppBundle:Object')->find($idObject);
+            $nameObject = $object->getObname();
 
-        $nameObject = $object->getObname();
-//        $string = $object->getObtxt();
-//        $textObject = substr($string, 3, 100);
-        $textObject= $object->getObtxt();
-        $city = $this->getCityName($object);
-        $photo = $this->getMidiFoto($object);
-        $allType = array(
-            'city' =>$city,
-            'photo' =>$photo,
-            'textObject' => $textObject,
-            'nameObject' => $nameObject
-        );
+            $string = $object->getObtxt();
+            $string1 = strip_tags(html_entity_decode($string, ENT_QUOTES, "UTF-8"));
+            $textObject = substr($string1, 0, 150);
+
+            $city = $this->getCityName($object);
+
+            $photo = $this->getMidiFoto($object);
+
+            $allType = array(
+                'city' => $city,
+                'photo' => $photo,
+                'textObject' => $textObject,
+                'nameObject' => $nameObject
+            );
+        if(1) {
+            $nameOb= array();
+            foreach ($allDateObject as $item) {
+                $idObject = $item->getObid();
+                $nameOb = $item->getObname($idObject);
+            }
+//            throw new ExpectationException($nameOb, $this->getSession());
+//            return $nameOb;
+        }
 
         return $this->render('base.html.twig', array(
 //            'city' =>$city,
 //            'photo' =>$photo,
 //            'nameObject' => $nameObject
-            'allType' => $allType
+//            'allType' => $allType
+            'nameOb' => $nameOb
         ));
     }
 

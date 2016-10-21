@@ -336,19 +336,19 @@
                     <div class="aa-title">
                         <h2>Latest Properties</h2>
                         <span></span>
-                        <p>{{ allType.textObject }}</p>
+                        {#<p>{{ allType.textObject }}</p>#}
                     </div>
                     <div class="aa-latest-properties-content">
                         <div class="row">
-                            {% for object in allType %}
+                            {#{% for object in nameOb %}#}
                             <div class="col-md-4">
                                 <article class="aa-properties-item">
 
                                     <a href="#" class="aa-properties-item-img">
-                                        <img src="/files/photo/big/{{ allType.photo }}" alt="img">
+                                        {#<img src="/files/photo/big/{{ allType.photo }}" alt="img">#}
                                     </a>
                                     <div class="aa-tag for-sale">
-                                        {{ allType.city }}
+                                        {{ nameOb }}
                                     </div>
                                     <div class="aa-properties-item-content">
                                         <div class="aa-properties-info">
@@ -358,7 +358,7 @@
                                             {#<span>{{ dump(nameObject) }}</span>#}
                                         </div>
                                         <div class="aa-properties-about">
-                                            <h3><a href="#">{{ allType.nameObject }}</a></h3>
+                                            {#<h3><a href="#">{{ allType.nameObject }}</a></h3>#}
                                             {#<p>{{ allType.textObject }}</p>#}
                                         </div>
                                         <div class="aa-properties-detial">
@@ -370,7 +370,7 @@
                                     </div>
                                 </article>
                             </div>
-                            {% endfor %}
+                            {#{% endfor %}#}
                             <div class="col-md-4">
                                 <article class="aa-properties-item">
                                     <a href="#" class="aa-properties-item-img">
